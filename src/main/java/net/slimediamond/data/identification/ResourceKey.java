@@ -5,7 +5,7 @@ package net.slimediamond.data.identification;
  *
  * @see ResourceKeyable
  */
-public class ResourceKey {
+public class ResourceKey implements NamespaceHolder {
     private final String namespace;
     private final String id;
 
@@ -26,10 +26,22 @@ public class ResourceKey {
     }
 
     /**
+     * The factory for a {@link ResourceKey}
+     *
+     * @param namespaceHolder The namespace for this key.
+     * @param id              Id of this key.
+     * @return The resultant {@link ResourceKey} object.
+     */
+    public static ResourceKey of(NamespaceHolder namespaceHolder, String id) {
+        return new ResourceKey(namespaceHolder.getNamespace(), id);
+    }
+
+    /**
      * Get the namespace for this resource key
      *
      * @return Resource key namespace
      */
+    @Override
     public String getNamespace() {
         return namespace;
     }
@@ -41,5 +53,15 @@ public class ResourceKey {
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Returns the resource key in the form of a string
+     *
+     * <p>This represents it in the form of <code>namespace:id</code></p>
+     * @return Resource key as a string
+     */
+    public String toString() {
+        return namespace + ":" + id;
     }
 }

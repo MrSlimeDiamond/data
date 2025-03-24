@@ -24,10 +24,12 @@ public class Main {
 ```
 
 ## The theory
-### Data storage types
-A `DataStorage` type allows implementation of data storage, for instance `Key`,
-which does not itself store a value, but rather sets the type of value to store so that
-it can be used in a `DataHolder`.
+### Keys
+A `Key` allows a reference something which will be stored on a `DataHolder` later.
+
+```java
+public static final Key<String> MY_KEY = Key.of(ResourceKey.of("testing", "test_key"), String.class);
+```
 
 ### Data holders
 A `DataHolder` is something which holds data, you may `offer` it data or `get`

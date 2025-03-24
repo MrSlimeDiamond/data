@@ -8,7 +8,7 @@ import net.slimediamond.data.identification.ResourceKeyable;
  *
  * @param <T> The type value for this key
  */
-public class Key<T> extends ResourceKeyable implements DataStorage<T> {
+public class Key<T> extends ResourceKeyable {
     private final Class<T> type;
 
     private Key(ResourceKey resourceKey, Class<T> type) {
@@ -29,7 +29,11 @@ public class Key<T> extends ResourceKeyable implements DataStorage<T> {
         return new Key<>(resourceKey, type);
     }
 
-    @Override
+    /**
+     * Get the type that this key stores
+     *
+     * @return Key type
+     */
     public Class<T> getType() {
         return type;
     }
