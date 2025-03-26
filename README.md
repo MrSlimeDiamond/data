@@ -4,10 +4,10 @@ without the need to create different methods inside of classes.
 
 ```java
 public class Keys {
-    public static final Key<String> MY_KEY = Key.of(ResourceKey.of("example", "my_key"));
+    public static final Key<Value<String>> MY_KEY = Key.from(ResourceKey.of("example", "my_key"));
 }
 
-public class MyDataHolder extends DataHolder {
+public class MyDataHolder implements DataHolder {
     // ... other methods ...
 }
 
@@ -28,7 +28,7 @@ public class Main {
 A `Key` allows a reference something which will be stored on a `DataHolder` later.
 
 ```java
-public static final Key<String> MY_KEY = Key.of(ResourceKey.of("testing", "test_key"), String.class);
+public static final Key<Value<String>> MY_KEY = Key.from(ResourceKey.of("testing", "test_key"), String.class);
 ```
 
 ### Data holders
@@ -47,8 +47,7 @@ myDataHolder.get(Keys.MY_KEY).ifPresent(value -> {
 A `ResourceKey` stores a **namespace** and an **id**, this is intended for developers
 to use when storing them in some form of persistent storage (like a database)
 
-> Persistent storage is not currently implemented in this API!
-> This is the intention of resource keys: developers implement persistent storage.
+String representation of a `ResourceKey` is `namespace:id`. For example: `cake:flavour`
 
 ## Inspiration
 [SpongeAPI](https://github.com/SpongePowered/SpongeAPI) has a very similar system which

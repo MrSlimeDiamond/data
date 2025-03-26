@@ -7,9 +7,12 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * A registry
+ * A registry storing values of a certain type, allowing cataloguing and retrieval of them.
  *
- * @see net.slimediamond.data.Key
+ * <p>Objects can be registered to this registry using {@link #register(ResourceKeyable)},
+ * and can later be unregistered with {@link #unregister(ResourceKeyable)}</p>
+ *
+ * @see BasicRegistry
  */
 public interface Registry<T extends ResourceKeyable> {
     /**

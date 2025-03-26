@@ -18,7 +18,7 @@ public class ResourceKey implements NamespaceHolder {
      * The factory for a {@link ResourceKey}.
      *
      * @param namespace Namespace for this key.
-     * @param id        Id of this key.
+     * @param id        ID of this key.
      * @return The resultant {@link ResourceKey} object.
      */
     public static ResourceKey of(String namespace, String id) {
@@ -29,7 +29,7 @@ public class ResourceKey implements NamespaceHolder {
      * The factory for a {@link ResourceKey}
      *
      * @param namespaceHolder The namespace for this key.
-     * @param id              Id of this key.
+     * @param id              ID of this key.
      * @return The resultant {@link ResourceKey} object.
      */
     public static ResourceKey of(NamespaceHolder namespaceHolder, String id) {

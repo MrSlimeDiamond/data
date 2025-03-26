@@ -4,14 +4,11 @@ package net.slimediamond.data.identification;
  * A data object which is catalogued by a
  * {@link ResourceKey}
  */
-public class ResourceKeyable {
-    private final ResourceKey resourceKey;
-
-    public ResourceKeyable(ResourceKey resourceKey) {
-        this.resourceKey = resourceKey;
-    }
-
-    public ResourceKey getResourceKey() {
-        return resourceKey;
-    }
+public interface ResourceKeyable {
+    /**
+     * Get the resource key
+     *
+     * @return Resource key
+     */
+    ResourceKey getResourceKey();
 }
